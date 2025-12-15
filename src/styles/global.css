@@ -275,7 +275,7 @@ body {
   justify-content: center;
   text-align: center;
   animation-delay: 0.2s;
-  margin-top: 12.5vh;
+  margin-top: 100px;
 }
 
 .hero-title {
@@ -567,7 +567,7 @@ body {
   }
 
   .hero-section{
-    margin-top: 10vh;
+    margin-top: 8vh;
   }
 
   .block {
@@ -583,7 +583,7 @@ body {
     gap: 1.5rem;
   }
 
-    .highlight::after {
+  .highlight::after {
     bottom: 3px;
     height: 2px;
   }
