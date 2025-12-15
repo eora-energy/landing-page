@@ -22,6 +22,8 @@ body {
   background: var(--darker-bg);
   color: var(--text-light);
   overflow-x: hidden;
+  min-height: 100vh;
+  min-height: 100svh;
 }
 
 /* App Container */
