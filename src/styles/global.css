@@ -164,6 +164,7 @@ body {
 /* Language Switcher */
 .language-switcher {
   position: relative;
+  z-index: 100;
 }
 
 .lang-button {
@@ -179,12 +180,19 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: 'Outfit', sans-serif;
+  /* Previene il doppio tap zoom su iOS */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .lang-button:hover {
   background: rgba(255, 255, 255, 0.1);
   border-color: var(--primary);
   transform: translateY(-2px);
+}
+
+.lang-button:active {
+  transform: translateY(0);
 }
 
 .lang-name {
@@ -200,13 +208,16 @@ body {
   position: absolute;
   top: calc(100% + 0.5rem);
   right: 0;
-  background: rgba(23, 52, 86, 0.95);
+  background: rgba(23, 52, 86, 0.98);
   backdrop-filter: blur(10px);
   border: 2px solid rgba(168, 204, 171, 0.3);
   border-radius: 10px;
   overflow: hidden;
   min-width: 150px;
   animation: fadeIn 0.2s ease;
+  /* Assicura che il dropdown sia cliccabile su mobile */
+  pointer-events: auto;
+  z-index: 1000;
 }
 
 @keyframes fadeIn {
@@ -233,9 +244,16 @@ body {
   cursor: pointer;
   transition: all 0.2s ease;
   font-family: 'Outfit', sans-serif;
+  /* Previene il doppio tap zoom su iOS */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  /* Migliora la reattività del touch */
+  -webkit-user-select: none;
+  user-select: none;
 }
 
-.lang-option:hover {
+.lang-option:hover,
+.lang-option:active {
   background: rgba(255, 255, 0, 0.1);
 }
 
@@ -586,5 +604,37 @@ body {
   .highlight::after {
     bottom: 3px;
     height: 2px;
+  }
+
+  .lang-button {
+    padding: 0.6rem 0.9rem;
+    /* Area di touch più grande */
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .lang-dropdown {
+    /* Dropdown più visibile su mobile */
+    background: rgba(23, 52, 86, 0.99);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  }
+
+  .lang-option {
+    /* Area di touch più grande per mobile */
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+  }
+
+  /* Previene problemi di scroll su mobile quando il dropdown è aperto */
+  body:has(.lang-dropdown) {
+    overflow: hidden;
+  }
+}
+
+/* Fix per Safari iOS */
+@supports (-webkit-touch-callout: none) {
+  .lang-button,
+  .lang-option {
+    -webkit-tap-highlight-color: rgba(255, 255, 0, 0.1);
   }
 }

@@ -1,14 +1,46 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { languages } from '../utils/translations';
 
 export default function LanguageSwitcher({ currentLang, onLanguageChange }) {
   const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  // Chiude il dropdown quando si clicca fuori
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('touchstart', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, [isOpen]);
+
+  const handleLanguageChange = (langCode) => {
+    // Forza il cambio lingua
+    onLanguageChange(langCode);
+    // Chiude il dropdown
+    setIsOpen(false);
+  };
 
   return (
-    <div className="language-switcher">
+    <div className="language-switcher" ref={dropdownRef}>
       <button 
         className="lang-button"
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          setIsOpen(!isOpen);
+        }}
+        type="button"
       >
         {languages.find(l => l.code === currentLang)?.flag}
         <span className="lang-name">
@@ -22,10 +54,17 @@ export default function LanguageSwitcher({ currentLang, onLanguageChange }) {
           {languages.map(lang => (
             <button
               key={lang.code}
+              type="button"
               className={`lang-option ${currentLang === lang.code ? 'active' : ''}`}
-              onClick={() => {
-                onLanguageChange(lang.code);
-                setIsOpen(false);
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                handleLanguageChange(lang.code);
+              }}
+              onTouchEnd={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                handleLanguageChange(lang.code);
               }}
             >
               <span className="lang-flag">{lang.flag}</span>
