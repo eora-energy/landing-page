@@ -9,19 +9,36 @@ export default function NewsletterSection({ t }) {
     e.preventDefault();
     setIsLoading(true);
 
-    // TODO: Sostituisci con la tua chiamata API Brevo
-    // Esempio: await fetch('/api/subscribe', { method: 'POST', body: JSON.stringify(formData) })
-    
-    // Simulate API call
-    setTimeout(() => {
-      setShowSuccess(true);
-      setFormData({ name: '', email: '' });
+    try {
+      const response = await fetch('http://localhost:3001/api/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email
+        })
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setShowSuccess(true);
+        setFormData({ name: '', email: '' });
+        
+        setTimeout(() => {
+          setShowSuccess(false);
+        }, 5000);
+      } else {
+        alert(data.error || 'Subscription failed. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Connection error. Please check if the server is running.');
+    } finally {
       setIsLoading(false);
-      
-      setTimeout(() => {
-        setShowSuccess(false);
-      }, 5000);
-    }, 1500);
+    }
   };
 
   return (
