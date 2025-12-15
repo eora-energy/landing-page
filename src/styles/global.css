@@ -588,15 +588,3 @@ body {
     height: 2px;
   }
 }
-
-/* iOS Safari repaint fix (backdrop-filter + fixed layers) */
-@supports (-webkit-touch-callout: none) {
-  header,
-  .lang-dropdown,
-  .newsletter-container {
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    transform: translateZ(0);
-    will-change: transform;
-  }
-}
