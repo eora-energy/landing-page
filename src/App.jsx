@@ -7,9 +7,10 @@ import NewsletterSection from './components/NewsletterSection';
 import FeaturesSection from './components/FeaturesSection';
 import Footer from './components/Footer';
 import { translations } from './utils/translations';
+import { useLanguage } from './hooks/useLanguage';
 
 export default function App() {
-  const [currentLang, setCurrentLang] = useState('en');
+  const { currentLang, changeLanguage, renderKey } = useLanguage('en');
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -19,12 +20,13 @@ export default function App() {
   const t = translations[currentLang];
 
   return (
-    <div className={`app ${isVisible ? 'visible' : ''}`}>
+    // Aggiungiamo key per forzare il re-mount completo su cambio lingua
+    <div key={`app-${renderKey}`} className={`app ${isVisible ? 'visible' : ''}`}>
       <AnimatedBackground />
       
       <Header 
         currentLang={currentLang} 
-        onLanguageChange={setCurrentLang}
+        onLanguageChange={changeLanguage}
         brand={t.brand}
       />
       

@@ -25,10 +25,14 @@ export default function LanguageSwitcher({ currentLang, onLanguageChange }) {
   }, [isOpen]);
 
   const handleLanguageChange = (langCode) => {
-    // Forza il cambio lingua
-    onLanguageChange(langCode);
-    // Chiude il dropdown
+    // Chiude immediatamente il dropdown
     setIsOpen(false);
+    
+    // Su mobile, usiamo un micro-delay per assicurarci che React flush lo stato
+    // Questo risolve il problema di re-rendering su dispositivi mobile reali
+    setTimeout(() => {
+      onLanguageChange(langCode);
+    }, 0);
   };
 
   return (
