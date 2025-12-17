@@ -18,7 +18,7 @@ export const translations = {
       { icon: '💡', label: 'Brilliant idea', value: '1' },
       { icon: '🚀', label: 'Enthusiasm', value: 'MAX' }
     ],
-    footer: '© 2025 EoraEnergy | Powered by Decentralized Renewable Energy Communities'
+    footer: '© 2025 EORA Energy | Powered by Decentralized Renewable Energy Communities'
   },
   it: {
     brand: 'EORA Energy',
@@ -39,7 +39,7 @@ export const translations = {
       { icon: '💡', label: 'Idea brillante', value: '1' },
       { icon: '🚀', label: 'Entusiasmo', value: 'MAX' }
     ],
-    footer: '© 2025 EoraEnergy | Alimentato da Comunità Energetiche Rinnovabili Decentralizzate'
+    footer: '© 2025 EORA Energy | Alimentato da Comunità Energetiche Rinnovabili Decentralizzate'
   },
   de: {
     brand: 'EORA Energy',
@@ -60,7 +60,7 @@ export const translations = {
       { icon: '💡', label: 'Brillante Idee', value: '1' },
       { icon: '🚀', label: 'Begeisterung', value: 'MAX' }
     ],
-    footer: '© 2025 EoraEnergy | Angetrieben von Dezentralen Erneuerbaren Energiegemeinschaften'
+    footer: '© 2025 EORA Energy | Angetrieben von Dezentralen Erneuerbaren Energiegemeinschaften'
   },
   fr: {
     brand: 'EORA Energy',
@@ -81,7 +81,7 @@ export const translations = {
       { icon: '💡', label: 'Idée brillante', value: '1' },
       { icon: '🚀', label: 'Enthousiasme', value: 'MAX' }
     ],
-    footer: '© 2025 EoraEnergy | Propulsé par les Communautés d\'Énergie Renouvelable Décentralisées'
+    footer: '© 2025 EORA Energy | Propulsé par les Communautés d\'Énergie Renouvelable Décentralisées'
   }
 };
 
