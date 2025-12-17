@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import AnimatedBackground from './components/AnimatedBackground';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
-import StatusSection from './components/StatusSection';
 import NewsletterSection from './components/NewsletterSection';
 import FeaturesSection from './components/FeaturesSection';
 import Footer from './components/Footer';
@@ -29,7 +28,7 @@ export default function App() {
   const t = translations[currentLang];
 
   return (
-    // Aggiungiamo key per forzare il re-mount completo su cambio lingua
+    // Key per forzare il re-mount completo su cambio lingua
     <div key={`app-${renderKey}`} className={`app ${isVisible ? 'visible' : ''}`}>
       <AnimatedBackground />
       

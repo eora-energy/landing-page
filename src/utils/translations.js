@@ -3,93 +3,85 @@ export const translations = {
     brand: 'EoraEnergy',
     hero: {
       title: ['Charging the', 'future', 'of energy'],
-      subtitle: 'Great power incoming. Not literally, we already have that. 🔋',
-      status: 'SYSTEM STATUS: Development at 127%'
+      subtitle: '',
     },
     newsletter: {
       title: 'Stay Connected to the Grid',
       subtitle: 'Subscribe to discover when we launch.',
       namePlaceholder: 'Your name',
       emailPlaceholder: 'your-email@example.com',
-      button: 'Join the Grid',
+      button: 'Join the future',
       buttonLoading: 'Connecting...',
       success: 'Welcome to the grid! We\'ll contact you soon.'
     },
     features: [
-      { icon: '☕', label: 'Coffee consumed', value: '∞' },
-      { icon: '💡', label: 'Bright ideas', value: '42' },
+      { icon: '💡', label: 'Brilliant idea', value: '1' },
       { icon: '🚀', label: 'Enthusiasm', value: 'MAX' }
     ],
-    footer: '© 2025 EoraEnergy | Powered by renewable enthusiasm'
+    footer: '© 2025 EoraEnergy | Powered by Decentralized Renewable Energy Communities'
   },
   it: {
     brand: 'EoraEnergy',
     hero: {
       title: ['Stiamo caricando', 'il futuro', 'dell\'energia'],
-      subtitle: 'Grande potenza in arrivo. Non letteralmente, quella ce l\'abbiamo già. 🔋',
-      status: 'STATO SISTEMA: Sviluppo al 127%'
+      subtitle: '',
     },
     newsletter: {
       title: 'Rimani Connesso alla Rete',
       subtitle: 'Iscriviti per scoprire quando lanceremo.',
       namePlaceholder: 'Il tuo nome',
       emailPlaceholder: 'la-tua-email@esempio.it',
-      button: 'Entra nella Rete',
+      button: 'Unisciti al futuro',
       buttonLoading: 'Connessione...',
       success: 'Benvenuto nella rete! Ti contatteremo presto.'
     },
     features: [
-      { icon: '☕', label: 'Caffè consumati', value: '∞' },
-      { icon: '💡', label: 'Idee brillanti', value: '42' },
+      { icon: '💡', label: 'Idea brillante', value: '1' },
       { icon: '🚀', label: 'Entusiasmo', value: 'MAX' }
     ],
-    footer: '© 2025 EoraEnergy | Alimentato da entusiasmo rinnovabile'
+    footer: '© 2025 EoraEnergy | Alimentato da Comunità Energetiche Rinnovabili Decentralizzate'
   },
   de: {
     brand: 'EoraEnergy',
     hero: {
       title: ['Wir laden', 'die Zukunft', 'der Energie'],
-      subtitle: 'Große Kraft kommt. Nicht buchstäblich, die haben wir schon. 🔋',
-      status: 'SYSTEMSTATUS: Entwicklung bei 127%'
+      subtitle: '',
     },
     newsletter: {
       title: 'Bleiben Sie mit dem Netz Verbunden',
       subtitle: 'Abonnieren Sie, um zu erfahren, wann wir starten.',
       namePlaceholder: 'Ihr Name',
       emailPlaceholder: 'ihre-email@beispiel.de',
-      button: 'Dem Netz Beitreten',
+      button: 'Der Zukunft beitreten',
       buttonLoading: 'Verbinden...',
       success: 'Willkommen im Netz! Wir werden uns bald bei Ihnen melden.'
     },
     features: [
-      { icon: '☕', label: 'Kaffee getrunken', value: '∞' },
-      { icon: '💡', label: 'Helle Ideen', value: '42' },
+      { icon: '💡', label: 'Brillante Idee', value: '1' },
       { icon: '🚀', label: 'Begeisterung', value: 'MAX' }
     ],
-    footer: '© 2025 EoraEnergy | Angetrieben von erneuerbarer Begeisterung'
+    footer: '© 2025 EoraEnergy | Angetrieben von Dezentralen Erneuerbaren Energiegemeinschaften'
   },
   fr: {
     brand: 'EoraEnergy',
     hero: {
       title: ['Nous chargeons', 'l\'avenir', 'de l\'énergie'],
-      subtitle: 'Grande puissance en route. Pas littéralement, nous l\'avons déjà. 🔋',
-      status: 'ÉTAT DU SYSTÈME: Développement à 127%'
+      subtitle: '',
     },
     newsletter: {
       title: 'Restez Connecté au Réseau',
       subtitle: 'Abonnez-vous pour découvrir notre lancement.',
       namePlaceholder: 'Votre nom',
       emailPlaceholder: 'votre-email@exemple.fr',
-      button: 'Rejoindre le Réseau',
+      button: 'Rejoindre le futur',
       buttonLoading: 'Connexion...',
       success: 'Bienvenue dans le réseau ! Nous vous contactons bientôt.'
     },
     features: [
-      { icon: '☕', label: 'Cafés consommés', value: '∞' },
-      { icon: '💡', label: 'Idées brillantes', value: '42' },
+      { icon: '💡', label: 'Idée brillante', value: '1' },
       { icon: '🚀', label: 'Enthousiasme', value: 'MAX' }
     ],
-    footer: '© 2025 EoraEnergy | Alimenté par l\'enthousiasme renouvelable'
+    footer: '© 2025 EoraEnergy | Propulsé par les Communautés d\'Énergie Renouvelable Décentralisées'
   }
 };
 
