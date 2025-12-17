@@ -1,6 +1,6 @@
 export const translations = {
   en: {
-    brand: 'EoraEnergy',
+    brand: 'EORA Energy',
     hero: {
       title: ['Charging the', 'future', 'of energy'],
       subtitle: '',
@@ -21,7 +21,7 @@ export const translations = {
     footer: '© 2025 EoraEnergy | Powered by Decentralized Renewable Energy Communities'
   },
   it: {
-    brand: 'EoraEnergy',
+    brand: 'EORA Energy',
     hero: {
       title: ['Stiamo caricando', 'il futuro', 'dell\'energia'],
       subtitle: '',
@@ -42,7 +42,7 @@ export const translations = {
     footer: '© 2025 EoraEnergy | Alimentato da Comunità Energetiche Rinnovabili Decentralizzate'
   },
   de: {
-    brand: 'EoraEnergy',
+    brand: 'EORA Energy',
     hero: {
       title: ['Wir laden', 'die Zukunft', 'der Energie'],
       subtitle: '',
@@ -63,7 +63,7 @@ export const translations = {
     footer: '© 2025 EoraEnergy | Angetrieben von Dezentralen Erneuerbaren Energiegemeinschaften'
   },
   fr: {
-    brand: 'EoraEnergy',
+    brand: 'EORA Energy',
     hero: {
       title: ['Nous chargeons', 'l\'avenir', 'de l\'énergie'],
       subtitle: '',
