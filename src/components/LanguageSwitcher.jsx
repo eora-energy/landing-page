@@ -5,7 +5,6 @@ export default function LanguageSwitcher({ currentLang, onLanguageChange }) {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
-  // Chiude il dropdown quando si clicca fuori
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -25,11 +24,9 @@ export default function LanguageSwitcher({ currentLang, onLanguageChange }) {
   }, [isOpen]);
 
   const handleLanguageChange = (langCode) => {
-    // Chiude immediatamente il dropdown
     setIsOpen(false);
-    
-    // Su mobile, usiamo un micro-delay per assicurarci che React flush lo stato
-    // Questo risolve il problema di re-rendering su dispositivi mobile reali
+
+    // Piccolo delay per evitare conflitti tra chiusura dropdown e cambio lingua su mobile
     setTimeout(() => {
       onLanguageChange(langCode);
     }, 0);

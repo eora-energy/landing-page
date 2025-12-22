@@ -26,7 +26,7 @@ export default function NewsletterSection({ t }) {
       if (response.ok) {
         setShowSuccess(true);
         setFormData({ name: '', email: '' });
-        
+
         setTimeout(() => {
           setShowSuccess(false);
         }, 5000);

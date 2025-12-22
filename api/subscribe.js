@@ -41,6 +41,7 @@ export default async function handler(req, res) {
       return res.json({ success: true, message: "Successfully subscribed to newsletter" });
     }
 
+    // Email duplicata = successo comunque
     if (response.status === 400 && data.code === "duplicate_parameter") {
       return res.json({ success: true, message: "Email already subscribed" });
     }

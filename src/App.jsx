@@ -14,12 +14,8 @@ export default function App() {
 
   useEffect(() => {
     setIsVisible(true);
-    
-    // Fix: Forza scroll to top al mount/ricarica pagina
-    // Previene che il browser "ricordi" la posizione scroll precedente
     window.scrollTo(0, 0);
-    
-    // Disabilita scroll restoration del browser
+
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
     }
@@ -28,7 +24,6 @@ export default function App() {
   const t = translations[currentLang];
 
   return (
-    // Key per forzare il re-mount completo su cambio lingua
     <div key={`app-${renderKey}`} className={`app ${isVisible ? 'visible' : ''}`}>
       <AnimatedBackground />
       

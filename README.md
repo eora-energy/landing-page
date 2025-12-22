@@ -1,35 +1,35 @@
 # EoraEnergy Landing Page
 
-Landing page per EoraEnergy. Work in progress, ovviamente. 🚀
+Landing page per EoraEnergy. Attualmente in sviluppo. 🚀
 
-Progetto fatto con React + Vite perché sì, mi piace vivere pericolosamente senza CRA.
+Stack: React 18 + Vite (più veloce e leggero di CRA).
 
-## 🎯 Cosa fa
+## 🎯 Features
 
-Una landing page multi-lingua (EN/IT/DE/FR) con animazioni, effetti grafici carini e un form newsletter integrato con Brevo. 
+Landing page multi-lingua (EN/IT/DE/FR) con animazioni CSS, effetti grafici e form newsletter integrato con Brevo.
 
-Features principali:
-- **Multi-lingua**: Cambio lingua al volo, funziona anche su mobile (ci ho sbattuto la testa un po')
-- **Newsletter**: Integrazione con Brevo per raccogliere email
-- **Animazioni**: Roba che brilla, sfere che fluttuano, grid che si muove - il pacchetto completo
-- **Responsive**: Funziona su desktop e mobile (testato su vari device, trust me)
-- **API Serverless**: Backend minimal per gestire le subscription
+Funzionalità principali:
+- **Multi-lingua**: Switch lingua real-time, ottimizzato anche per mobile (iOS e Android testati)
+- **Newsletter**: Integrazione completa con Brevo API per raccolta email
+- **Animazioni**: Effetti visivi CSS puri (grid animata, sfere fluttuanti, gradienti)
+- **Responsive**: Design mobile-first, testato su diversi dispositivi
+- **API Serverless**: Endpoint Vercel Functions per gestione subscription
 
-## 🚀 Quick Start
+## 🚀 Setup Locale
 
 ```bash
 # Clona il repo
 git clone <repo-url>
-cd eora-energy-landing
+cd landing-page
 
-# Installa dipendenze
+# Installa le dipendenze
 npm install
 
-# Avvia dev server
+# Avvia il dev server
 npm run dev
 ```
 
-Apri `http://localhost:5173` e voilà.
+Apri il browser su `http://localhost:5173`.
 
 ## 📁 Struttura Progetto
 
@@ -69,47 +69,51 @@ eora-energy-landing/
 └── vite.config.js
 ```
 
-## 🌍 Multi-lingua
+## 🌍 Sistema Multi-lingua
 
-Ho implementato un sistema di cambio lingua che:
-- Supporta EN, IT, DE, FR
-- Persiste la scelta dell'utente (in realtà no, per ora ogni refresh riparte da EN)
-- Funziona anche su mobile iOS/Android (questo è stato un casino)
+Il sistema supporta 4 lingue:
+- 🇬🇧 English (default)
+- 🇮🇹 Italiano
+- 🇩🇪 Deutsch
+- 🇫🇷 Français
 
-### Come funziona
+### Implementazione
 
-Il cuore sta in `src/hooks/useLanguage.js`. Ho usato `flushSync` da React DOM perché su mobile c'erano problemi con il batching degli update. Ora funziona smooth.
+Il cuore del sistema è in `src/hooks/useLanguage.js`. Uso `flushSync` di React DOM per risolvere problemi di batching su mobile - senza, il dropdown si chiudeva ma la lingua non cambiava subito.
 
-Tutte le traduzioni sono in `src/utils/translations.js` - se devi aggiungere una lingua, vai lì.
+Per aggiungere una nuova lingua, modifica `src/utils/translations.js`.
 
-## 📧 Newsletter & Brevo
+**Nota**: La lingua selezionata non persiste al reload (riparte sempre da EN). Se serve persistenza, si può aggiungere facilmente con localStorage.
 
-### Setup Brevo
+## 📧 Newsletter con Brevo
 
-1. Vai su [Brevo](https://www.brevo.com) e crea un account
-2. Genera una API key da Settings → API Keys
-3. Crea una lista contatti e prendi il List ID
+### Setup Account Brevo
 
-### Configurazione
+1. Crea un account su [Brevo](https://www.brevo.com) (ex Sendinblue)
+2. Genera una API key: Settings → API Keys → Create API Key
+3. Crea una lista contatti: Contacts → Lists → Create a new list
+4. Prendi nota del List ID (visibile nell'URL della lista)
 
-Crea un file `.env` nella root:
+### Configurazione Locale
+
+Crea un file `.env` nella root del progetto:
 
 ```env
-BREVO_API_KEY=xkeysib-la_tua_api_key_qui
-BREVO_LIST_ID=il_tuo_list_id_qui
+BREVO_API_KEY=xkeysib-your_api_key_here
+BREVO_LIST_ID=your_list_id_here
 PORT=3001
 ```
 
-**Nota**: Il file `.env` è in `.gitignore`, quindi non finirà su GitHub. C'è `.env.example` come riferimento.
+**Importante**: Il file `.env` è in `.gitignore` e non verrà mai committato. Usa `.env.example` come template.
 
 ### API Endpoints
 
-Ho creato 3 endpoint serverless (tipo Vercel Functions):
+Ci sono 3 endpoint serverless (Vercel Functions):
 
 #### POST /api/subscribe
 Aggiunge un contatto alla lista Brevo.
 
-Request:
+**Request:**
 ```json
 {
   "name": "Mario Rossi",
@@ -117,7 +121,7 @@ Request:
 }
 ```
 
-Response:
+**Response (successo):**
 ```json
 {
   "success": true,
@@ -125,31 +129,43 @@ Response:
 }
 ```
 
+**Response (errore):**
+```json
+{
+  "error": "Email già registrata / Invalid email format / etc."
+}
+```
+
 #### GET /api/test-brevo
-Testa la connessione con Brevo. Utile per debug.
+Testa la connessione con Brevo e verifica che le credenziali funzionino.
 
 #### GET /api/health
-Health check per vedere se l'API è viva.
+Health check endpoint - risponde con status 200 se tutto ok.
 
-### Test Locale API
+### Test API in Locale
 
-Per testare le API in locale:
+Per testare gli endpoint API localmente:
 
 ```bash
-# Installa Vercel CLI
+# Installa Vercel CLI globalmente
 npm i -g vercel
 
-# Avvia dev server
+# Avvia il dev server (includerà anche le API)
 vercel dev
 ```
 
 Le API saranno disponibili su `http://localhost:3000/api/*`
 
-Per testare la subscription:
+**Test subscription con curl:**
 ```bash
 curl -X POST http://localhost:3000/api/subscribe \
   -H "Content-Type: application/json" \
-  -d '{"name":"Test","email":"test@example.com"}'
+  -d '{"name":"Test User","email":"test@example.com"}'
+```
+
+**Test connessione Brevo:**
+```bash
+curl http://localhost:3000/api/test-brevo
 ```
 
 ## 🎨 Customizzazione
@@ -178,50 +194,53 @@ Le animazioni sono tutte in CSS. Se vuoi modificarle cerca gli `@keyframes` in `
 
 ## 🏗️ Build & Deploy
 
-### Build Produzione
+### Build per Produzione
 
 ```bash
 npm run build
 ```
 
-I file ottimizzati finiscono in `dist/`.
+I file ottimizzati vengono generati nella cartella `dist/`.
 
-### Deploy su Vercel
+### Deploy su Vercel (Consigliato)
 
-Il modo più semplice:
+Metodo più semplice:
 
 ```bash
 # Installa Vercel CLI
 npm i -g vercel
 
-# Deploy
+# Deploy interattivo
 vercel
 ```
 
-Prima del deploy, configura le environment variables su Vercel:
-- `BREVO_API_KEY`
-- `BREVO_LIST_ID`
-
-Settings → Environment Variables su Vercel dashboard.
+**Configurazione Environment Variables:**
+1. Vai su Vercel Dashboard → Settings → Environment Variables
+2. Aggiungi:
+   - `BREVO_API_KEY` → la tua API key Brevo
+   - `BREVO_LIST_ID` → l'ID della tua lista
 
 ### Deploy su Netlify
 
-1. Push su GitHub
-2. Connetti il repo su Netlify
-3. Build command: `npm run build`
-4. Publish directory: `dist`
-5. Aggiungi le env variables nelle settings
+1. Push del codice su GitHub
+2. Connetti il repository su Netlify
+3. Configura build settings:
+   - **Build command:** `npm run build`
+   - **Publish directory:** `dist`
+4. Aggiungi le environment variables nelle settings
+5. Deploy
 
-**Nota**: Su Netlify devi configurare le API functions diversamente (usano una struttura diversa da Vercel).
+**Nota**: Su Netlify le API functions hanno una struttura diversa da Vercel. Potresti dover adattare i file in `api/`.
 
-## 🐛 Bug Conosciuti / TODO
+## 🐛 Known Issues / TODO
 
-- [ ] Il cambio lingua non persiste al refresh (aggiungi localStorage se serve)
-- [ ] Manca validazione email più robusta lato client
-- [ ] Favicon potrebbero essere ottimizzati meglio
-- [ ] Aggiungere rate limiting alle API
-- [ ] Test suite? Maybe un giorno...
-- [x] Fix cambio lingua su mobile iOS (RISOLTO con flushSync)
+- [ ] La lingua selezionata non persiste al refresh (si può aggiungere localStorage)
+- [ ] Validazione email più robusta lato client
+- [ ] Ottimizzazione favicon e meta tags per SEO
+- [ ] Rate limiting sugli endpoint API
+- [ ] Test suite (Jest/Vitest + React Testing Library)
+- [ ] Analytics integration (Google Analytics / Plausible)
+- [x] ~~Fix cambio lingua su mobile iOS~~ (RISOLTO con flushSync)
 
 ## 📱 Mobile
 
@@ -244,31 +263,38 @@ npm run preview  # Preview build locale
 
 ### Perché flushSync?
 
-React batchifica gli update di stato per performance. Su mobile questo causava problemi con il cambio lingua - il dropdown si chiudeva ma la lingua non cambiava immediatamente. `flushSync` forza React ad applicare gli update subito.
+React batchifica gli aggiornamenti di stato per ottimizzare le performance. Su mobile questo causava un problema: il dropdown si chiudeva ma la lingua non cambiava immediatamente, creando un'esperienza utente scadente.
 
-### Gestione Touch su Mobile
+`flushSync` forza React ad applicare subito gli update di stato, risolvendo il problema.
 
-Ho aggiunto:
-- `touch-action: manipulation` per prevenire il doppio tap zoom
-- `-webkit-tap-highlight-color` per rimuovere l'highlight su iOS
-- Event handlers sia per `onClick` che `onTouchEnd`
+### Ottimizzazioni Mobile
 
-### Animazioni CSS
+Per garantire una UX ottimale su touch device:
+- `touch-action: manipulation` → previene il doppio tap per zoom
+- `-webkit-tap-highlight-color: transparent` → rimuove l'highlight blu su iOS
+- Event handlers multipli: `onClick` (desktop) + `onTouchEnd` (mobile)
 
-Tutto CSS puro, zero JS per le animazioni. Performa meglio e funziona anche se JS è disabilitato (lol chi disabilita JS nel 2025).
+### Animazioni Pure CSS
+
+Tutte le animazioni sono implementate in CSS puro, senza JavaScript. Vantaggi:
+- Migliori performance (GPU-accelerated)
+- Funziona anche con JS disabilitato
+- Codice più pulito e manutenibile
 
 ## 🤝 Contributing
 
-Se vuoi contribuire, fai una PR. Ma onestamente non so perché vorresti contribuire a una landing page di work in progress. 😅
+Pull requests are welcome. Per modifiche importanti, apri prima una issue per discutere cosa vorresti cambiare.
 
 ## 📄 License
 
-Fai quello che vuoi, basta non dire che è tuo.
+Progetto personale. Usa pure il codice come riferimento, ma non copiare tutto 1:1.
 
 ---
 
 **Made with ⚡ by Kris**
 
-Per domande o problemi, apri una issue o mandami un messaggio.
+Per domande, problemi o suggerimenti → apri una issue.
 
-P.S. Sì, ho usato gli emoji nel README. Fight me. 🥊
+---
+
+*Ultimo aggiornamento: Dicembre 2025*
