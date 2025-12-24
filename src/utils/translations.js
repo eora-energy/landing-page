@@ -5,6 +5,14 @@ export const translations = {
       title: ['Pilot Project', '2026', ''],
       subtitle: '',
     },
+    partners: {
+      title: 'Our Partners',
+      list: [
+        { name: 'SUPSI', logo: '/partners/SUPSI.png' },
+        { name: 'AMB', logo: '/partners/AMB.png' },
+        { name: 'AIM', logo: '/partners/AIM.png' }
+      ]
+    },
     hero: {
       title: ['Charging the', 'future', 'of energy'],
       subtitle: '',
@@ -29,6 +37,14 @@ export const translations = {
     pilotProjectHero: {
       title: ['Progetto pilota', '2026', ''],
       subtitle: '',
+    },
+    partners: {
+      title: 'I nostri partner',
+      list: [
+        { name: 'SUPSI', logo: '/partners/SUPSI.png' },
+        { name: 'AMB', logo: '/partners/AMB.png' },
+        { name: 'AIM', logo: '/partners/AIM.png' }
+      ]
     },
     hero: {
       title: ['Stiamo caricando', 'il futuro', 'dell\'energia'],
@@ -55,6 +71,14 @@ export const translations = {
       title: ['Pilotprojekt', '2026', ''],
       subtitle: '',
     },
+    partners: {
+      title: 'Unsere Partner',
+      list: [
+        { name: 'SUPSI', logo: '/partners/SUPSI.png' },
+        { name: 'AMB', logo: '/partners/AMB.png' },
+        { name: 'AIM', logo: '/partners/AIM.png' }
+      ]
+    },
     hero: {
       title: ['Wir laden', 'die Zukunft', 'der Energie'],
       subtitle: '',
@@ -79,6 +103,14 @@ export const translations = {
     pilotProjectHero: {
       title: ['Projet pilote', '2026', ''],
       subtitle: '',
+    },
+    partners: {
+      title: 'Nos partenaires',
+      list: [
+        { name: 'SUPSI', logo: '/partners/SUPSI.png' },
+        { name: 'AMB', logo: '/partners/AMB.png' },
+        { name: 'AIM', logo: '/partners/AIM.png' }
+      ]
     },
     hero: {
       title: ['Nous chargeons', 'l\'avenir', 'de l\'énergie'],

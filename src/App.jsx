@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import AnimatedBackground from './components/AnimatedBackground';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
+import PartnersSection from './components/PartnersSection';
 import NewsletterSection from './components/NewsletterSection';
 import FeaturesSection from './components/FeaturesSection';
 import Footer from './components/Footer';
@@ -35,6 +36,7 @@ export default function App() {
       
       <main>
         <HeroSection t={{ hero: t.pilotProjectHero }} className="pilot-project-hero" />
+        <PartnersSection partners={t.partners.list} />
         <NewsletterSection t={t} />
         <HeroSection t={t} className="main-hero" />
         <FeaturesSection features={t.features} />
