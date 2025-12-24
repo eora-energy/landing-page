@@ -21,7 +21,7 @@ export const translations = {
       title: '',
       list: [
         { name: 'Eora', logo: '/internal/EORA.png' },
-        { name: 'CERD', logo: '/internal/CERD.png' }
+        { name: 'CERD', logo: '/internal/CERD_ENG.png' }
       ]
     },
     newsletter: {
@@ -61,7 +61,7 @@ export const translations = {
       title: '',
       list: [
         { name: 'Eora', logo: '/internal/EORA.png' },
-        { name: 'CERD', logo: '/internal/CERD.png' }
+        { name: 'CERD', logo: '/internal/CERD_ITA.png' }
       ]
     },
     newsletter: {
@@ -101,7 +101,7 @@ export const translations = {
       title: '',
       list: [
         { name: 'Eora', logo: '/internal/EORA.png' },
-        { name: 'CERD', logo: '/internal/CERD.png' }
+        { name: 'CERD', logo: '/internal/CERD_ENG.png' }
       ]
     },
     newsletter: {
@@ -141,7 +141,7 @@ export const translations = {
       title: '',
       list: [
         { name: 'Eora', logo: '/internal/EORA.png' },
-        { name: 'CERD', logo: '/internal/CERD.png' }
+        { name: 'CERD', logo: '/internal/CERD_ENG.png' }
       ]
     },
     newsletter: {
