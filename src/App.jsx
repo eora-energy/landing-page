@@ -34,8 +34,9 @@ export default function App() {
       />
       
       <main>
+        <HeroSection t={{ hero: t.pilotProjectHero }} className="pilot-project-hero" />
         <NewsletterSection t={t} />
-        <HeroSection t={t} />
+        <HeroSection t={t} className="main-hero" />
         <FeaturesSection features={t.features} />
       </main>
 

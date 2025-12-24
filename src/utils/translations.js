@@ -1,6 +1,10 @@
 export const translations = {
   en: {
     brand: 'EORA Energy',
+    pilotProjectHero: {
+      title: ['Pilot Project', '2026', ''],
+      subtitle: '',
+    },
     hero: {
       title: ['Charging the', 'future', 'of energy'],
       subtitle: '',
@@ -22,6 +26,10 @@ export const translations = {
   },
   it: {
     brand: 'EORA Energy',
+    pilotProjectHero: {
+      title: ['Progetto pilota', '2026', ''],
+      subtitle: '',
+    },
     hero: {
       title: ['Stiamo caricando', 'il futuro', 'dell\'energia'],
       subtitle: '',
@@ -43,6 +51,10 @@ export const translations = {
   },
   de: {
     brand: 'EORA Energy',
+    pilotProjectHero: {
+      title: ['Pilotprojekt', '2026', ''],
+      subtitle: '',
+    },
     hero: {
       title: ['Wir laden', 'die Zukunft', 'der Energie'],
       subtitle: '',
@@ -64,6 +76,10 @@ export const translations = {
   },
   fr: {
     brand: 'EORA Energy',
+    pilotProjectHero: {
+      title: ['Projet pilote', '2026', ''],
+      subtitle: '',
+    },
     hero: {
       title: ['Nous chargeons', 'l\'avenir', 'de l\'énergie'],
       subtitle: '',
