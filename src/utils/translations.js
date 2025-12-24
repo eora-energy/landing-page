@@ -14,12 +14,19 @@ export const translations = {
       ]
     },
     hero: {
-      title: ['Charging the', 'future', 'of energy'],
+      title: ['The future of', 'energy', 'is now'],
       subtitle: '',
     },
+    internalLogos: {
+      title: '',
+      list: [
+        { name: 'Eora', logo: '/internal/EORA.png' },
+        { name: 'CERD', logo: '/internal/CERD.png' }
+      ]
+    },
     newsletter: {
-      title: 'Stay Connected to the Grid',
-      subtitle: 'Subscribe to discover when we launch.',
+      title: 'Stay Connected',
+      subtitle: 'Join our energy revolution. Stay updated on the future.',
       namePlaceholder: 'Your name',
       emailPlaceholder: 'your-email@example.com',
       button: 'Join the future',
@@ -47,12 +54,19 @@ export const translations = {
       ]
     },
     hero: {
-      title: ['Stiamo caricando', 'il futuro', 'dell\'energia'],
+      title: ['Il futuro dell\'', 'energia', 'è ora'],
       subtitle: '',
     },
+    internalLogos: {
+      title: '',
+      list: [
+        { name: 'Eora', logo: '/internal/EORA.png' },
+        { name: 'CERD', logo: '/internal/CERD.png' }
+      ]
+    },
     newsletter: {
-      title: 'Rimani Connesso alla Rete',
-      subtitle: 'Iscriviti per scoprire quando lanceremo.',
+      title: 'Rimani connesso',
+      subtitle: 'Unisciti alla nostra rivoluzione energetica. Resta aggiornato sul futuro.',
       namePlaceholder: 'Il tuo nome',
       emailPlaceholder: 'la-tua-email@esempio.it',
       button: 'Unisciti al futuro',
@@ -80,12 +94,19 @@ export const translations = {
       ]
     },
     hero: {
-      title: ['Wir laden', 'die Zukunft', 'der Energie'],
+      title: ['Die Zukunft der', 'Energie', 'ist jetzt'],
       subtitle: '',
     },
+    internalLogos: {
+      title: '',
+      list: [
+        { name: 'Eora', logo: '/internal/EORA.png' },
+        { name: 'CERD', logo: '/internal/CERD.png' }
+      ]
+    },
     newsletter: {
-      title: 'Bleiben Sie mit dem Netz Verbunden',
-      subtitle: 'Abonnieren Sie, um zu erfahren, wann wir starten.',
+      title: 'Bleiben Sie verbunden',
+      subtitle: 'Schließen Sie sich unserer Energierevolution an. Bleiben Sie über die Zukunft informiert.',
       namePlaceholder: 'Ihr Name',
       emailPlaceholder: 'ihre-email@beispiel.de',
       button: 'Der Zukunft beitreten',
@@ -113,12 +134,19 @@ export const translations = {
       ]
     },
     hero: {
-      title: ['Nous chargeons', 'l\'avenir', 'de l\'énergie'],
+      title: ['L\'avenir de l\'', 'énergie', 'est maintenant'],
       subtitle: '',
     },
+    internalLogos: {
+      title: '',
+      list: [
+        { name: 'Eora', logo: '/internal/EORA.png' },
+        { name: 'CERD', logo: '/internal/CERD.png' }
+      ]
+    },
     newsletter: {
-      title: 'Restez Connecté au Réseau',
-      subtitle: 'Abonnez-vous pour découvrir notre lancement.',
+      title: 'Restez connecté',
+      subtitle: 'Rejoignez notre révolution énergétique. Restez informé sur l\'avenir.',
       namePlaceholder: 'Votre nom',
       emailPlaceholder: 'votre-email@exemple.fr',
       button: 'Rejoindre le futur',

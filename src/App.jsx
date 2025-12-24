@@ -3,6 +3,7 @@ import AnimatedBackground from './components/AnimatedBackground';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import PartnersSection from './components/PartnersSection';
+import InternalLogosSection from './components/InternalLogosSection';
 import NewsletterSection from './components/NewsletterSection';
 import FeaturesSection from './components/FeaturesSection';
 import Footer from './components/Footer';
@@ -39,7 +40,7 @@ export default function App() {
         <PartnersSection partners={t.partners.list} />
         <NewsletterSection t={t} />
         <HeroSection t={t} className="main-hero" />
-        <FeaturesSection features={t.features} />
+        <InternalLogosSection logos={t.internalLogos.list} />
       </main>
 
       <Footer text={t.footer} />
