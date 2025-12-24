@@ -34,8 +34,8 @@ export default function App() {
       />
       
       <main>
-        <HeroSection t={t} />
         <NewsletterSection t={t} />
+        <HeroSection t={t} />
         <FeaturesSection features={t.features} />
       </main>
 

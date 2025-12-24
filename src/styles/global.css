@@ -288,14 +288,12 @@ body {
   justify-content: center;
   text-align: center;
   animation-delay: 0.2s;
-  margin-top: 140px;
 }
 
 .hero-title {
   font-size: clamp(2.5rem, 8vw, 4.5rem);
   font-weight: 800;
   line-height: 1.2;
-  margin-bottom: 1.5rem;
 }
 
 .highlight {
@@ -365,6 +363,7 @@ body {
 /* Newsletter Section */
 .newsletter-section {
   animation-delay: 0.6s;
+  margin-top: 140px;
 }
 
 .newsletter-container {
