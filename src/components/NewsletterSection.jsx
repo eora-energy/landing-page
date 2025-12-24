@@ -11,7 +11,6 @@ export default function NewsletterSection({ t }) {
     e.preventDefault();
     setError('');
 
-    // Validazione checkbox
     if (!acceptedTerms) {
       setError(t.newsletter.errorAccept || 'Please accept terms and privacy policy');
       return;
@@ -76,7 +75,6 @@ export default function NewsletterSection({ t }) {
             required
           />
 
-          {/* Singolo checkbox per termini e privacy */}
           <div className="checkbox-group">
             <label className="checkbox-label">
               <input

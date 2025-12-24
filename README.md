@@ -1,8 +1,8 @@
 # EoraEnergy Landing Page
 
-Landing page per EoraEnergy. Attualmente in sviluppo. 🚀
+Landing page per EoraEnergy.
 
-Stack: React 18 + Vite (più veloce e leggero di CRA).
+Stack: React 18 + Vite.
 
 ## 🎯 Features
 
@@ -41,6 +41,8 @@ eora-energy-landing/
 │   │   ├── Header.jsx
 │   │   ├── LanguageSwitcher.jsx
 │   │   ├── HeroSection.jsx
+│   │   ├── PartnersSection.jsx
+│   │   ├── InternalLogosSection.jsx
 │   │   ├── NewsletterSection.jsx
 │   │   ├── FeaturesSection.jsx
 │   │   └── Footer.jsx
@@ -261,12 +263,6 @@ npm run preview  # Preview build locale
 
 ## 💡 Note Tecniche
 
-### Perché flushSync?
-
-React batchifica gli aggiornamenti di stato per ottimizzare le performance. Su mobile questo causava un problema: il dropdown si chiudeva ma la lingua non cambiava immediatamente, creando un'esperienza utente scadente.
-
-`flushSync` forza React ad applicare subito gli update di stato, risolvendo il problema.
-
 ### Ottimizzazioni Mobile
 
 Per garantire una UX ottimale su touch device:
@@ -281,20 +277,6 @@ Tutte le animazioni sono implementate in CSS puro, senza JavaScript. Vantaggi:
 - Funziona anche con JS disabilitato
 - Codice più pulito e manutenibile
 
-## 🤝 Contributing
-
-Pull requests are welcome. Per modifiche importanti, apri prima una issue per discutere cosa vorresti cambiare.
-
-## 📄 License
-
-Progetto personale. Usa pure il codice come riferimento, ma non copiare tutto 1:1.
-
 ---
 
-**Made with ⚡ by Kris**
-
-Per domande, problemi o suggerimenti → apri una issue.
-
----
-
-*Ultimo aggiornamento: Dicembre 2025*
+*Ultimo aggiornamento: Dicembre 2024*

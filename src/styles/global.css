@@ -386,10 +386,6 @@ body {
   transform: scale(1.05);
 }
 
-/* Main Hero - Custom Styles */
-.main-hero {
-}
-
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.3; }
