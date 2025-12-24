@@ -31,7 +31,12 @@ export const translations = {
       emailPlaceholder: 'your-email@example.com',
       button: 'Join the future',
       buttonLoading: 'Connecting...',
-      success: 'Welcome to the grid! We\'ll contact you soon.'
+      success: 'Welcome to the grid! We\'ll contact you soon.',
+      acceptPrefix: 'I accept the',
+      and: 'and',
+      termsLink: 'Terms and Conditions',
+      privacyLink: 'Privacy Policy',
+      errorAccept: 'Please accept the terms and privacy policy to continue'
     },
     features: [
       { icon: '💡', label: 'Brilliant idea', value: '1' },
@@ -71,7 +76,12 @@ export const translations = {
       emailPlaceholder: 'la-tua-email@esempio.it',
       button: 'Unisciti al futuro',
       buttonLoading: 'Connessione...',
-      success: 'Benvenuto nella rete! Ti contatteremo presto.'
+      success: 'Benvenuto nella rete! Ti contatteremo presto.',
+      acceptPrefix: 'Accetto i',
+      and: 'e l\'',
+      termsLink: 'Termini e Condizioni',
+      privacyLink: 'Informativa sulla Privacy',
+      errorAccept: 'Accetta termini e privacy per continuare'
     },
     features: [
       { icon: '💡', label: 'Idea brillante', value: '1' },
@@ -111,7 +121,12 @@ export const translations = {
       emailPlaceholder: 'ihre-email@beispiel.de',
       button: 'Der Zukunft beitreten',
       buttonLoading: 'Verbinden...',
-      success: 'Willkommen im Netz! Wir werden uns bald bei Ihnen melden.'
+      success: 'Willkommen im Netz! Wir werden uns bald bei Ihnen melden.',
+      acceptPrefix: 'Ich akzeptiere die',
+      and: 'und die',
+      termsLink: 'Geschäftsbedingungen',
+      privacyLink: 'Datenschutzerklärung',
+      errorAccept: 'Bitte akzeptieren Sie die Bedingungen und Datenschutz'
     },
     features: [
       { icon: '💡', label: 'Brillante Idee', value: '1' },
@@ -151,7 +166,12 @@ export const translations = {
       emailPlaceholder: 'votre-email@exemple.fr',
       button: 'Rejoindre le futur',
       buttonLoading: 'Connexion...',
-      success: 'Bienvenue dans le réseau ! Nous vous contactons bientôt.'
+      success: 'Bienvenue dans le réseau ! Nous vous contactons bientôt.',
+      acceptPrefix: 'J\'accepte les',
+      and: 'et la',
+      termsLink: 'Conditions Générales',
+      privacyLink: 'Politique de Confidentialité',
+      errorAccept: 'Veuillez accepter les conditions et la confidentialité'
     },
     features: [
       { icon: '💡', label: 'Idée brillante', value: '1' },
